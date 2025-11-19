@@ -1,9 +1,8 @@
 import { motion, useInView } from "framer-motion"
 import { useRef, useState } from "react"
 import { features } from "./consts"
-import { cardVariants, containerVariants } from "./motions"
-
 import "./featuresStyles.css"
+import { cardVariants, containerVariants } from "./motions"
 
 export const Features = () => {
 	const ref = useRef(null)
@@ -31,7 +30,7 @@ export const Features = () => {
 				initial="hidden"
 				animate={isInView ? "visible" : "hidden"}
 			>
-				{features.map((feature, index) => {
+				{features.map((feature) => {
 					const IconComponent = feature.icon
 					const isSelected = selectedCard === feature.title
 					const isShrunken = selectedCard !== null && !isSelected
