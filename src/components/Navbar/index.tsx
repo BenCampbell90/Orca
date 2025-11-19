@@ -1,3 +1,4 @@
+import { MobileNavMenu } from "@/components/Navbar/components/mobileNavMenu";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import "./navbarStyles.css";
@@ -7,10 +8,6 @@ export const Navbar = () => {
 
 	const toggleMenu = () => {
 		setIsMenuOpen(!isMenuOpen);
-	};
-
-	const handleLinkClick = () => {
-		setIsMenuOpen(false);
 	};
 
 	return (
@@ -25,24 +22,16 @@ export const Navbar = () => {
 			>
 				{isMenuOpen ? <X size={24} /> : <Menu size={24} />}
 			</button>
-			<div
-				className={`navbar__linksContainer ${isMenuOpen ? "navbar__linksContainer--open" : ""}`}
-			>
+			<div className="navbar__linksContainer">
 				<ul className="navbar__links">
 					<li className="navbar__link">
-						<a href="#features" onClick={handleLinkClick}>
-							Features
-						</a>
+						<a href="#features">Features</a>
 					</li>
 					<li className="navbar__link">
-						<a href="#pricing" onClick={handleLinkClick}>
-							Pricing
-						</a>
+						<a href="#pricing">Pricing</a>
 					</li>
 					<li className="navbar__link">
-						<a href="#contact" onClick={handleLinkClick}>
-							Contact
-						</a>
+						<a href="#contact">Contact</a>
 					</li>
 				</ul>
 				<a
@@ -50,11 +39,13 @@ export const Navbar = () => {
 					target="_blank"
 					rel="noopener"
 					className="navbar__signupButton"
-					onClick={handleLinkClick}
 				>
 					Sign Up
 				</a>
 			</div>
+			{isMenuOpen && 
+				<MobileNavMenu isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
+			}
 		</nav>
 	);
 };

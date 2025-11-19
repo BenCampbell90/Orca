@@ -3,27 +3,7 @@ import { ChevronDown } from "lucide-react";
 import "./heroStyles.css";
 
 export const Hero = () => {
-	const handleScrollToFeatures = () => {
-		const featuresSection = document.getElementById("features");
-		const appContainer = document.getElementById("app");
-
-		if (featuresSection && appContainer) {
-			const navbar = document.querySelector(".navbar");
-			const navbarHeight = navbar ? navbar.getBoundingClientRect().height : 100;
-			const offset = navbarHeight + 20;
-
-			const containerRect = appContainer.getBoundingClientRect();
-			const elementRect = featuresSection.getBoundingClientRect();
-			const elementPosition =
-				elementRect.top - containerRect.top + appContainer.scrollTop;
-			const offsetPosition = elementPosition - offset;
-
-			appContainer.scrollTo({
-				top: offsetPosition,
-				behavior: "smooth",
-			});
-		}
-	};
+	
 
 	return (
 		<section className="hero">
@@ -35,14 +15,13 @@ export const Hero = () => {
 					business. Fast, light, and refreshingly straightforward.
 				</p>
 			</div>
-			<button
-				type="button"
+			<a
 				className="hero__scrollIndicator"
 				aria-label="Scroll to features"
-				onClick={handleScrollToFeatures}
+				href="#features"
 			>
 				<ChevronDown size={32} />
-			</button>
+			</a>
 		</section>
 	);
 };
