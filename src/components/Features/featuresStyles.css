@@ -3,6 +3,8 @@
 	flex-direction: column;
 	justify-content: center;
 	width: 100%;
+	scroll-margin-top: 100px;
+	padding: 0 100px;
 
 	.features__title {
 		font-size: 32px;
@@ -37,9 +39,17 @@
 				color 0.3s ease;
 		}
 
-		.feature__card:hover .feature__icon {
-			color: white;
-			transform: scale(1.1);
+		.feature__card:hover {
+			.feature__icon {
+				color: white;
+				transform: scale(1.1);
+			}
 		}
+	}
+}
+
+@media (max-width: 768px) {
+	.features {
+		padding: 0 20px;
 	}
 }

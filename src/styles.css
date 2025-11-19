@@ -1,9 +1,14 @@
+* {
+  box-sizing: border-box;
+}
+
 html,
 body {
   height: 100vh;
   margin: 0;
   padding: 0;
   overflow: hidden;
+  overflow-x: hidden;
 }
 
 body {
@@ -14,15 +19,19 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-image: url("/background.png");
   background-size: cover;
-  background-position: center;
+  background-position: top ;
   background-repeat: no-repeat;
+  overflow-x: hidden;
 }
 
 #app {
   height: 100vh;
   overflow-y: auto;
+  overflow-x: hidden;
   max-width: 1400px;
   margin: 0 auto;
+  scroll-behavior: smooth;
+  width: 100%;
 }
 
 code {

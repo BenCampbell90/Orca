@@ -1,5 +1,6 @@
 .app-container {
-	padding: 0 100px;
+	width: 100%;
+	overflow-x: hidden;
 
 	.app-content {
 		display: flex;
@@ -7,7 +8,19 @@
 		align-items: center;
 		justify-content: center;
 		width: 100%;
-		padding-top: 100px;
 		gap: 100px;
+		overflow-x: hidden;
+	}
+}
+
+@media (max-width: 768px) {
+	.app-container {
+		max-width: 100vw;
+		overflow-x: hidden;
+
+		.app-content {
+			gap: 60px;
+			max-width: 100%;
+		}
 	}
 }

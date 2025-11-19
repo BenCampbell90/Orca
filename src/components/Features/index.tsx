@@ -4,7 +4,7 @@ import "./featuresStyles.css";
 
 export const Features = () => {
 	return (
-		<section className="features">
+		<section id="features" className="features">
 			<h2 className="features__title">Powerful Tools - All in One Place</h2>
 			<div className="features__cardContainer">
 				{features.map((feature) => {
