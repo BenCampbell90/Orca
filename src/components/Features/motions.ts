@@ -1,20 +1,14 @@
 export const cardVariants = {
-	hidden: (angle: number) => {
-		const distance = 500
-		const radians = (angle * Math.PI) / 180
-		return {
-			opacity: 0,
-			x: Math.cos(radians) * distance,
-			y: Math.sin(radians) * distance,
-		}
+	hidden: {
+		opacity: 1,
+		scale: 1,
 	},
 	visible: {
 		opacity: 1,
-		x: 0,
-		y: 0,
+		scale: [1, 1.35, 1],
 		transition: {
-			duration: 0.8,
-			ease: [0.4, 0, 0.2, 1] as const,
+			duration: 0.35,
+			ease: [0.34, 1.56, 0.64, 1] as const,
 		},
 	},
 }
@@ -23,7 +17,7 @@ export const containerVariants = {
 	hidden: {},
 	visible: {
 		transition: {
-			staggerChildren: 0.1,
+			staggerChildren: 0.08,
 		},
 	},
 }

@@ -35,14 +35,12 @@ export const Features = () => {
 					const IconComponent = feature.icon
 					const isSelected = selectedCard === feature.title
 					const isShrunken = selectedCard !== null && !isSelected
-					const angle = -135 + (index * (360 / features.length))
 					
 					return (
 						<motion.div
 							className={`feature__card ${isSelected ? "feature__card--expanded" : ""} ${isShrunken ? "feature__card--shrunken" : ""}`}
 							key={feature.title}
 							variants={cardVariants}
-							custom={angle}
 							animate={{
 								scale: isSelected ? 1.5 : isShrunken ? 0.7 : 1,
 								opacity: !selectedCard || isSelected ? 1 : isShrunken ? 0.3 : 0.5,
