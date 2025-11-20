@@ -1,17 +1,26 @@
 import { Features } from "@/components/Features";
 import { Hero } from "@/components/Hero";
 import { Navbar } from "@/components/Navbar";
+import { Pricing } from "@/components/Pricing";
 import { createFileRoute, useRouter } from "@tanstack/react-router";
 import { useEffect } from "react";
 import "./appStyles.css";
 
+/**********************************************************************************************************
+ *   ROUTE START
+ **********************************************************************************************************/
 export const Route = createFileRoute("/")({
 	component: App,
 });
 
+/**********************************************************************************************************
+ *   COMPONENT START
+ **********************************************************************************************************/
 function App() {
+	/***** HOOKS *****/
 	const router = useRouter();
 
+	/***** EFFECTS *****/
 	useEffect(() => {
 		const scrollToHash = (hash: string) => {
 			const element = document.querySelector(hash);
@@ -75,12 +84,14 @@ function App() {
 		};
 	}, [router]);
 
+	/***** RENDER *****/
 	return (
 		<main className="app-container">
 			<Navbar />
 			<div className="app-content">
 				<Hero />
 				<Features />
+				<Pricing />
 			</div>
 		</main>
 	);

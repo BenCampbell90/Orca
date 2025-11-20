@@ -3,13 +3,19 @@ import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import "./navbarStyles.css";
 
+/**********************************************************************************************************
+ *   COMPONENT START
+ **********************************************************************************************************/
 export const Navbar = () => {
+	/***** STATE *****/
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+	/***** FUNCTIONS *****/
 	const toggleMenu = () => {
 		setIsMenuOpen(!isMenuOpen);
 	};
 
+	/***** RENDER *****/
 	return (
 		<nav className="navbar">
 			<img src="/logo.webp" alt="Orca" className="navbar__logo" />
@@ -38,9 +44,8 @@ export const Navbar = () => {
 					</li>
 				</ul>
 				<a
-					href="/#signup"
+					href="https://app.orca-management.au"
 					target="_blank"
-					rel="noopener"
 					className="navbar__signupButton"
 				>
 					Sign Up

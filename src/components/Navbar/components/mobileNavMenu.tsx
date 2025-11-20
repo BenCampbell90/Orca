@@ -2,9 +2,14 @@ import type { Dispatch, SetStateAction } from "react"
 import { useEffect, useRef } from "react"
 import "./mobileNavMenuStyles.css"
 
+/**********************************************************************************************************
+ *   COMPONENT START
+ **********************************************************************************************************/
 export const MobileNavMenu = ({isMenuOpen, setIsMenuOpen}: {isMenuOpen: boolean, setIsMenuOpen: Dispatch<SetStateAction<boolean>>}) => {
+	/***** HOOKS *****/
 	const menuRef = useRef<HTMLDivElement>(null)
 
+	/***** EFFECTS *****/
 	useEffect(() => {
 		const handleClickAway = (event: MouseEvent | TouchEvent) => {
 			const target = event.target as Node
@@ -32,6 +37,7 @@ export const MobileNavMenu = ({isMenuOpen, setIsMenuOpen}: {isMenuOpen: boolean,
 		}
 	}, [isMenuOpen, setIsMenuOpen])
 
+	/***** RENDER *****/
 	return (
 		<div ref={menuRef} className={`mobileNavMenu ${isMenuOpen ? "mobileNavMenu--open" : ""}`}>
 			<ul className="mobileNavMenu__links">
