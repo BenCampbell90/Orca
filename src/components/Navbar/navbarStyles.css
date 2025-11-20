@@ -27,6 +27,7 @@
 		cursor: pointer;
 		padding: 8px;
 		z-index: 1001;
+		position: relative;
 	}
 
 	.navbar__linksContainer {

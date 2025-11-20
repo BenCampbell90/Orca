@@ -1,5 +1,6 @@
 import { motion, useInView } from "framer-motion"
 import { useRef, useState } from "react"
+import { useAppViewport } from "../../hooks/useAppViewport"
 import { features } from "./consts"
 import "./featuresStyles.css"
 import { cardVariants, containerVariants } from "./motions"
@@ -8,6 +9,7 @@ export const Features = () => {
 	const ref = useRef(null)
 	const isInView = useInView(ref, { once: true, margin: "0px 0px -200px 0px" })
 	const [selectedCard, setSelectedCard] = useState<string | null>(null)
+	const isMobile = useAppViewport(["sm"])
 
 	return (
 		<section 
@@ -41,7 +43,7 @@ export const Features = () => {
 							key={feature.title}
 							variants={cardVariants}
 							animate={{
-								scale: isSelected ? 1.5 : isShrunken ? 0.7 : 1,
+								scale: isSelected ? (isMobile ? 1 : 1.5) : isShrunken ? 0.7 : 1,
 								opacity: !selectedCard || isSelected ? 1 : isShrunken ? 0.3 : 0.5,
 							}}
 							transition={{

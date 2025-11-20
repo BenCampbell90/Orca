@@ -16,7 +16,10 @@ export const Navbar = () => {
 			<button
 				type="button"
 				className="navbar__menuButton"
-				onClick={toggleMenu}
+				onClick={(e) => {
+					e.stopPropagation()
+					toggleMenu()
+				}}
 				aria-label="Toggle menu"
 				aria-expanded={isMenuOpen}
 			>

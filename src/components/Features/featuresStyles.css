@@ -37,6 +37,9 @@
 			transition: all 0.5s linear;
 			position: relative;
 			cursor: pointer;
+			width: 100%;
+			box-sizing: border-box;
+			overflow-wrap: break-word;
 
 			.feature__title {
 				text-align: center;
@@ -51,6 +54,8 @@
 			opacity: 1;
 			z-index: 10;
 			justify-content: flex-start;
+			width: 100%;
+			max-width: 100%;
 		}
 
 		.feature__card--shrunken {
@@ -112,11 +117,18 @@
 				height: 120px;
 				padding: 15px;
 				gap: 8px;
+				max-width: 100%;
+				box-sizing: border-box;
 
 				.feature__title {
 					font-size: 14px;
 					text-align: center;
 				}
+			}
+
+			.feature__card--expanded {
+				width: 100%;
+				max-width: 100%;
 			}
 		}
 	}
@@ -138,6 +150,8 @@
 			.feature__card {
 				height: 100px;
 				padding: 12px;
+				max-width: 100%;
+				box-sizing: border-box;
 
 				.feature__icon {
 					svg {
@@ -151,6 +165,11 @@
 					text-align: center;
 					line-height: 1.2;
 				}
+			}
+
+			.feature__card--expanded {
+				width: 100%;
+				max-width: 100%;
 			}
 		}
 	}
