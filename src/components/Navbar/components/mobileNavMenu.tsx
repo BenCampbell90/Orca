@@ -15,7 +15,6 @@ export const MobileNavMenu = ({isMenuOpen, setIsMenuOpen}: {isMenuOpen: boolean,
 			const target = event.target as Node
 			const menuButton = document.querySelector(".navbar__menuButton")
 			
-			// Don't close if clicking the menu button or inside the menu
 			if (
 				menuButton?.contains(target) ||
 				menuRef.current?.contains(target)
