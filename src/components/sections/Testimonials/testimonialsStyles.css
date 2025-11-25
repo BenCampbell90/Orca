@@ -4,8 +4,7 @@
 	justify-content: center;
 	align-items: center;
 	width: 100%;
-	height: calc(100dvh - 50px);
-	padding: 0 100px 0 100px;
+	padding: 80px 100px 0 100px;
 
 	.testimonials__title {
 		font-size: 32px;
@@ -107,7 +106,7 @@
 
 @media (max-width: 1024px) {
 	.testimonials {
-		padding: 0 50px 0 50px;
+		padding: 80px 50px 0 50px;
 
 		.testimonials__container {
 			gap: 20px;
@@ -129,7 +128,7 @@
 
 @media (max-width: 768px) {
 	.testimonials {
-		padding: 0 20px 0 20px;
+		padding: 70px 20px 0 20px;
 
 		.testimonials__title {
 			font-size: 24px;
@@ -176,7 +175,7 @@
 
 @media (max-width: 480px) {
 	.testimonials {
-		padding: 0 15px 0 15px;
+		padding: 70px 15px 0 15px;
 
 		.testimonials__title {
 			font-size: 20px;

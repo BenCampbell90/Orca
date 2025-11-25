@@ -4,7 +4,7 @@
 	justify-content: center;
 	align-items: center;
 	width: 100%;
-	padding: 0 100px 0 100px;
+	padding: 80px 100px 0 100px;
 
 	.contact__title {
 		font-size: 32px;
@@ -133,13 +133,13 @@
 
 @media (max-width: 1024px) {
 	.contact {
-		padding: 0 50px 0 50px;
+		padding: 80px 50px 0 50px;
 	}
 }
 
 @media (max-width: 768px) {
 	.contact {
-		padding: 0 20px 0 20px;
+		padding: 70px 20px 0 20px;
 
 		.contact__title {
 			font-size: 24px;
@@ -169,7 +169,7 @@
 
 @media (max-width: 480px) {
 	.contact {
-		padding: 0 15px 0 15px;
+		padding: 70px 15px 0 15px;
 
 		.contact__title {
 			font-size: 20px;
