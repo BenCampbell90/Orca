@@ -2,11 +2,10 @@
 	position: fixed;
 	top: 0;
 	right: 0;
-	height: 100vh;
+	height: 100dvh;
 	width: 100%;
 	max-width: 320px;
-	background-color: rgba(0, 0, 0, 0.95);
-	backdrop-filter: blur(20px);
+	background-color: black;
 	flex-direction: column;
 	justify-content: flex-start;
 	align-items: flex-start;

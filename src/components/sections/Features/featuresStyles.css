@@ -4,7 +4,7 @@
 	justify-content: center;
 	width: 100%;
 	padding: 0 100px 0 100px;
-	min-height: calc(100vh - 100px);
+	height: calc(100dvh - 100px);
 
 	.features__title {
 		font-size: 32px;

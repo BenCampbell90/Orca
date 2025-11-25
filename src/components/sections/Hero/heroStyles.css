@@ -4,7 +4,7 @@
 	align-items: center;
 	justify-content: center;
 	width: 100%;
-	height: calc(100vh - 50px);
+	height: calc(100dvh - 50px);
 	color: #fff;
 	position: relative;
 	padding: 20px 100px;
@@ -111,7 +111,6 @@
 
 @media (max-width: 480px) {
 	.hero {
-		height: calc(100vh - 70px);
 		padding: 10px 15px;
 
 		.hero__content {

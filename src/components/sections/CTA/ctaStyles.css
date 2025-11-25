@@ -5,7 +5,7 @@
 	align-items: center;
 	width: 100%;
 	padding: 80px 100px;
-	min-height: calc(100vh - 100px);
+	min-height: calc(100dvh - 100px);
 	position: relative;
 	overflow: hidden;
 }

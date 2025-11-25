@@ -27,7 +27,7 @@ export const Contact = () => {
 		e.preventDefault()
 		
 		// Construct mailto link with form data
-		const recipient = "bencampbell90@outlook.com"
+		const recipient = ""
 		const subject = encodeURIComponent(formData.subject)
 		const body = encodeURIComponent(
 			`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
