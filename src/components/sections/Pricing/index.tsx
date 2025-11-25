@@ -8,7 +8,8 @@ import "./pricingStyles.css"
  **********************************************************************************************************/
 export const Pricing = () => {
 	const ref = useRef(null)
-	const isInView = useInView(ref, { once: true, margin: "0px 0px -200px 0px" })
+	// Use once: false so animations can trigger even when navigating directly
+	const isInView = useInView(ref, { once: false, margin: "0px 0px -100px 0px", amount: 0.2 })
 
 	/***** RENDER *****/
 	return (

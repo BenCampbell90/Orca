@@ -1,0 +1,146 @@
+.footer {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 80px;
+}
+
+.footer__content {
+	width: 100%;
+	max-width: 1400px;
+	background-color: rgba(255, 255, 255, 0.05);
+	backdrop-filter: blur(10px);
+	border-top: 2px solid rgba(255, 255, 255, 0.1);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 30px 100px;
+}
+
+.footer__copyright {
+	font-size: 16px;
+	color: rgba(255, 255, 255, 0.9);
+	font-weight: 400;
+}
+
+.footer__social {
+	display: flex;
+	gap: 20px;
+	align-items: center;
+}
+
+.footer__socialIcon {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	transition: all 0.3s ease;
+	text-decoration: none;
+	color: rgba(0, 191, 255, 0.8);
+	cursor: pointer;
+}
+
+.footer__socialIcon:hover {
+	opacity: 0.75;
+	color: rgba(0, 191, 255, 1);
+	transform: translateY(-2px);
+}
+
+.footer__socialIcon svg {
+	width: 26px;
+	height: 26px;
+}
+
+.footer__bar {
+	width: 100%;
+	background-color: #1a1a1a;
+	height: 60px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	border-top: 2px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer__barLine {
+	width: 200px;
+	height: 2px;
+	background-color: rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 1024px) {
+	.footer__content {
+		padding: 25px 50px;
+	}
+}
+
+@media (max-width: 768px) {
+	.footer {
+		margin-top: 60px;
+	}
+
+	.footer__content {
+		flex-direction: column;
+		gap: 20px;
+		padding: 25px 20px;
+		text-align: center;
+	}
+
+	.footer__copyright {
+		font-size: 14px;
+	}
+
+	.footer__socialIcon {
+		width: 38px;
+		height: 38px;
+	}
+
+	.footer__socialIcon svg {
+		width: 24px;
+		height: 24px;
+	}
+
+	.footer__bar {
+		height: 50px;
+	}
+
+	.footer__barLine {
+		width: 150px;
+	}
+}
+
+@media (max-width: 480px) {
+	.footer {
+		margin-top: 40px;
+	}
+
+	.footer__content {
+		padding: 20px 15px;
+	}
+
+	.footer__copyright {
+		font-size: 12px;
+	}
+
+	.footer__socialIcon {
+		width: 35px;
+		height: 35px;
+	}
+
+	.footer__socialIcon svg {
+		width: 22px;
+		height: 22px;
+	}
+
+	.footer__bar {
+		height: 40px;
+	}
+
+	.footer__barLine {
+		width: 100px;
+	}
+}
+

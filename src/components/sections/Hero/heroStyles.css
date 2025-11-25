@@ -4,7 +4,7 @@
 	align-items: center;
 	justify-content: center;
 	width: 100%;
-	height: calc(100vh - 100px);
+	height: calc(100vh - 50px);
 	color: #fff;
 	position: relative;
 	padding: 20px 100px;
@@ -70,9 +70,14 @@
 	}
 }
 
+@media (max-width: 1024px) {
+	.hero {
+		padding: 20px 50px;
+	}
+}
+
 @media (max-width: 768px) {
 	.hero {
-		height: calc(100vh - 80px);
 		padding: 15px 20px;
 
 		.hero__content {
@@ -99,6 +104,37 @@
 			svg {
 				width: 24px;
 				height: 24px;
+			}
+		}
+	}
+}
+
+@media (max-width: 480px) {
+	.hero {
+		height: calc(100vh - 70px);
+		padding: 10px 15px;
+
+		.hero__content {
+			gap: 12px;
+
+			.hero__title {
+				font-size: 28px;
+			}
+
+			.hero__description {
+				font-size: 14px;
+				width: 95%;
+			}
+		}
+
+		.hero__scrollIndicator {
+			width: 45px;
+			height: 45px;
+			bottom: 15px;
+
+			svg {
+				width: 20px;
+				height: 20px;
 			}
 		}
 	}

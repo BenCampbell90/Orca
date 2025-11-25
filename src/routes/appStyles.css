@@ -8,8 +8,8 @@
 		align-items: center;
 		justify-content: center;
 		width: 100%;
-		gap: 100px;
 		overflow-x: hidden;
+		gap: 60px;
 	
 		scrollbar-width: none; 
 		-ms-overflow-style: none; 
@@ -20,14 +20,30 @@
 	}
 }
 
+@media (max-width: 1024px) {
+	.app-container {
+		/* .app-content {
+			gap: 80px;
+		} */
+	}
+}
+
 @media (max-width: 768px) {
 	.app-container {
 		max-width: 100vw;
 		overflow-x: hidden;
 
 		.app-content {
-			gap: 60px;
+			/* gap: 60px; */
 			max-width: 100%;
 		}
 	}
 }
+
+/* @media (max-width: 480px) {
+	.app-container {
+		.app-content {
+			gap: 50px;
+		}
+	}
+} */

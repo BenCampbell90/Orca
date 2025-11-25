@@ -1,9 +1,10 @@
 .mobileNavMenu {
 	position: fixed;
 	top: 0;
-	right: -100%;
+	right: 0;
 	height: 100vh;
-	width: 100vw;
+	width: 100%;
+	max-width: 320px;
 	background-color: rgba(0, 0, 0, 0.95);
 	backdrop-filter: blur(20px);
 	flex-direction: column;
@@ -11,15 +12,17 @@
 	align-items: flex-start;
 	padding: 80px 30px 30px;
 	gap: 30px;
-	transition: right 0.3s ease;
+	transform: translateX(100%);
+	transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 	box-shadow: -2px 0 10px rgba(0, 0, 0, 0.5);
 	display: flex;
 	margin: 0;
 	z-index: 999;
-	pointer-events: auto;
+	pointer-events: none;
 
 	&.mobileNavMenu--open {
-		right: 0;
+		transform: translateX(0);
+		pointer-events: auto;
 	}
 
 	.mobileNavMenu__links {
@@ -45,6 +48,40 @@
 		}
 	}
 
+	.mobileNavMenu__social {
+		display: flex;
+		gap: 20px;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		padding: 10px 0;
+	}
+
+	.mobileNavMenu__socialIcon {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 44px;
+		height: 44px;
+		border-radius: 50%;
+		background-color: rgba(255, 255, 255, 0.05);
+		transition: all 0.3s ease;
+		text-decoration: none;
+		color: rgba(255, 255, 255, 0.9);
+		cursor: pointer;
+
+		&:hover {
+			background-color: rgba(0, 191, 255, 0.1);
+			color: rgba(0, 191, 255, 1);
+			transform: translateY(-2px);
+		}
+
+		svg {
+			width: 24px;
+			height: 24px;
+		}
+	}
+
 	.mobileNavMenu__signupButton {
 		width: 100%;
 		text-align: center;
@@ -58,6 +95,12 @@
 		&:hover {
 			background-color: rgba(58, 142, 210, 0.1);
 		}
+	}
+}
+
+@media (min-width: 769px) {
+	.mobileNavMenu {
+		display: none;
 	}
 }
 

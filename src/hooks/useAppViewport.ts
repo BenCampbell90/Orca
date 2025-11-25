@@ -16,9 +16,6 @@ const defaultBreakpoints: Breakpoints = {
 	sm: 480,
 }
 
-/**
- * Gets the current viewport size based on breakpoints
- */
 const getViewportSize = (breakpoints: Breakpoints): ViewportSize => {
 	const width = window.innerWidth
 

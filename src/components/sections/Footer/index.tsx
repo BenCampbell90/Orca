@@ -1,54 +1,22 @@
-import { MobileNavMenu } from "@/components/Navbar/components/mobileNavMenu";
-import { Menu, X } from "lucide-react";
-import { useState } from "react";
-import "./navbarStyles.css";
+import "./footerStyles.css";
 
 /**********************************************************************************************************
  *   COMPONENT START
  **********************************************************************************************************/
-export const Navbar = () => {
-	/***** STATE *****/
-	const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-	/***** FUNCTIONS *****/
-	const toggleMenu = () => {
-		setIsMenuOpen(!isMenuOpen);
-	};
-
+export const Footer = () => {
 	/***** RENDER *****/
 	return (
-		<nav className="navbar">
-			<img src="/logo.webp" alt="Orca" className="navbar__logo" />
-			<button
-				type="button"
-				className="navbar__menuButton"
-				onClick={(e) => {
-					e.stopPropagation()
-					toggleMenu()
-				}}
-				aria-label="Toggle menu"
-				aria-expanded={isMenuOpen}
-			>
-				{isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-			</button>
-			<div className="navbar__linksContainer">
-				<ul className="navbar__links">
-					<li className="navbar__link">
-						<a href="#features">Features</a>
-					</li>
-					<li className="navbar__link">
-						<a href="#pricing">Pricing</a>
-					</li>
-					<li className="navbar__link">
-						<a href="#contact">Contact</a>
-					</li>
-				</ul>
-				<div className="navbar__social">
+		<footer className="footer">
+			<div className="footer__content">
+				<div className="footer__copyright">
+					ORCA Management System © 2025. All rights reserved
+				</div>
+				<div className="footer__social">
 					<a
 						href="https://www.facebook.com/profile.php?id=81825417747"
 						target="_blank"
 						rel="noopener noreferrer"
-						className="navbar__socialIcon"
+						className="footer__socialIcon"
 						title="Facebook"
 						aria-label="Facebook"
 					>
@@ -66,7 +34,7 @@ export const Navbar = () => {
 						href="https://www.instagram.com/orca ms"
 						target="_blank"
 						rel="noopener noreferrer"
-						className="navbar__socialIcon"
+						className="footer__socialIcon"
 						title="Instagram"
 						aria-label="Instagram"
 					>
@@ -81,15 +49,8 @@ export const Navbar = () => {
 						</svg>
 					</a>
 				</div>
-				<a
-					href="https://app.orca-management.au"
-					target="_blank"
-					className="navbar__signupButton"
-				>
-					Sign Up
-				</a>
 			</div>
-			<MobileNavMenu isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
-		</nav>
+
+		</footer>
 	);
 };

@@ -1,16 +1,23 @@
+import { useAppViewport } from "@/hooks/useAppViewport"
 import { motion, useInView } from "framer-motion"
 import { useRef, useState } from "react"
-import { useAppViewport } from "../../hooks/useAppViewport"
 import { features } from "./consts"
 import "./featuresStyles.css"
 import { cardVariants, containerVariants } from "./motions"
 
+/**********************************************************************************************************
+ *   COMPONENT START
+ **********************************************************************************************************/
 export const Features = () => {
+	/***** STATE *****/
 	const ref = useRef(null)
-	const isInView = useInView(ref, { once: true, margin: "0px 0px -200px 0px" })
 	const [selectedCard, setSelectedCard] = useState<string | null>(null)
-	const isMobile = useAppViewport(["sm"])
 
+	/***** HOOKS *****/
+	const isMobile = useAppViewport(["sm"])
+	const isInView = useInView(ref, { once: false, margin: "0px 0px -100px 0px", amount: 0.2 })
+
+	/***** RENDER *****/
 	return (
 		<section 
 			id="features" 

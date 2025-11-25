@@ -1,22 +1,14 @@
-import { OrcaModelLoader } from "@/components/Hero/components/orcaModel/loader";
+import { OrcaModelLoader } from "@/components/sections/Hero/components/orcaModel/loader";
+import { OrcaModel } from "@/components/sections/Hero/components/orcaModel/orcaModel";
 import { Environment, OrbitControls, useGLTF } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { Suspense } from "react";
 
-function Orca() {
-	const { scene } = useGLTF("/orca.glb");
-
-	return (
-		<primitive
-			object={scene}
-			scale={0.8}
-			position={[0, 0, 0]}
-			rotation={[0, 0, 0]}
-		/>
-	);
-}
-
-export function OrcaModel() {
+/**********************************************************************************************************
+ *   COMPONENT START
+ **********************************************************************************************************/	
+export function OrcaCanvas() {
+	/***** RENDER *****/
 	return (
 		<div className="orca__model__container">
 			<Canvas
@@ -28,10 +20,10 @@ export function OrcaModel() {
 				<directionalLight position={[10, 10, 5]} intensity={1} />
 				<pointLight position={[-10, -10, -5]} intensity={0.5} />
 
-				{/* Environment for better lighting/reflections */}
+				{/* Environment */}
 				<Environment preset="sunset" />
 
-				{/* Controls for rotating the model */}
+				{/* Controls  */}
 				<OrbitControls
 					enableZoom={false}
 					enablePan={false}
@@ -40,9 +32,9 @@ export function OrcaModel() {
 					autoRotateSpeed={0.5}
 				/>
 
-				{/* The orca model with loading fallback */}
+				{/* The orca model */}
 				<Suspense fallback={<OrcaModelLoader />}>
-					<Orca />
+					<OrcaModel />
 				</Suspense>
 			</Canvas>
 		</div>

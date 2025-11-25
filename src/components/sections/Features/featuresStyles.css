@@ -3,8 +3,8 @@
 	flex-direction: column;
 	justify-content: center;
 	width: 100%;
-	scroll-margin-top: 100px;
-	padding: 0 100px 300px 100px;
+	padding: 0 100px 0 100px;
+	min-height: calc(100vh - 100px);
 
 	.features__title {
 		font-size: 32px;
@@ -91,7 +91,7 @@
 
 @media (max-width: 1024px) {
 	.features {
-		padding: 0 50px 250px 50px;
+		padding: 0 50px 0 50px;
 
 		.features__cardContainer {
 			grid-template-columns: repeat(3, 1fr);
@@ -101,8 +101,7 @@
 
 @media (max-width: 768px) {
 	.features {
-		padding: 0 20px 200px 20px;
-		scroll-margin-top: 80px;
+		padding: 0 20px 0 20px;
 
 		.features__title {
 			font-size: 24px;
@@ -136,7 +135,7 @@
 
 @media (max-width: 480px) {
 	.features {
-		padding: 0 15px 150px 15px;
+		padding: 0 15px 0 15px;
 
 		.features__title {
 			font-size: 20px;
