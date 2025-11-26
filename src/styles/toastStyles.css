@@ -1,0 +1,166 @@
+/* Custom Toast Styles - Dark theme with cyan accents */
+
+.Toastify__toast-container {
+	z-index: 9999;
+}
+
+.Toastify__toast {
+	background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+	border: 2px solid rgba(255, 255, 255, 0.1);
+	border-radius: 12px;
+	box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 191, 255, 0.1);
+	color: white;
+	font-family: inherit;
+	font-size: 15px;
+	padding: 16px 20px;
+	min-height: 60px;
+	backdrop-filter: blur(10px);
+	transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.Toastify__toast:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5), 0 0 30px rgba(0, 191, 255, 0.2);
+}
+
+/* Success Toast */
+.Toastify__toast--success {
+	border-color: rgba(0, 191, 255, 0.6);
+	background: linear-gradient(135deg, #1a1a1a 0%, #1a2a35 100%);
+	box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 191, 255, 0.15);
+}
+
+.Toastify__toast--success:hover {
+	box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5), 0 0 30px rgba(0, 191, 255, 0.3);
+	border-color: rgba(0, 191, 255, 0.8);
+}
+
+.Toastify__toast--success .Toastify__toast-icon {
+	color: rgba(0, 191, 255, 1);
+	filter: drop-shadow(0 0 8px rgba(0, 191, 255, 0.6));
+}
+
+/* Error Toast */
+.Toastify__toast--error {
+	border-color: rgba(255, 100, 100, 0.6);
+	background: linear-gradient(135deg, #1a1a1a 0%, #351a1a 100%);
+	box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 20px rgba(255, 100, 100, 0.15);
+}
+
+.Toastify__toast--error:hover {
+	box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5), 0 0 30px rgba(255, 100, 100, 0.3);
+	border-color: rgba(255, 100, 100, 0.8);
+}
+
+.Toastify__toast--error .Toastify__toast-icon {
+	color: rgba(255, 100, 100, 1);
+	filter: drop-shadow(0 0 8px rgba(255, 100, 100, 0.6));
+}
+
+/* Info Toast */
+.Toastify__toast--info {
+	border-color: rgba(0, 191, 255, 0.6);
+	background: linear-gradient(135deg, #1a1a1a 0%, #1a2a35 100%);
+	box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 191, 255, 0.15);
+}
+
+.Toastify__toast--info .Toastify__toast-icon {
+	color: rgba(0, 191, 255, 1);
+	filter: drop-shadow(0 0 8px rgba(0, 191, 255, 0.6));
+}
+
+/* Warning Toast */
+.Toastify__toast--warning {
+	border-color: rgba(255, 200, 0, 0.6);
+	background: linear-gradient(135deg, #1a1a1a 0%, #352a1a 100%);
+	box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 20px rgba(255, 200, 0, 0.15);
+}
+
+.Toastify__toast--warning .Toastify__toast-icon {
+	color: rgba(255, 200, 0, 1);
+	filter: drop-shadow(0 0 8px rgba(255, 200, 0, 0.6));
+}
+
+/* Toast Body */
+.Toastify__toast-body {
+	color: rgba(255, 255, 255, 0.95);
+	font-weight: 400;
+	line-height: 1.5;
+	padding: 0;
+	margin: 0;
+}
+
+/* Progress Bar */
+.Toastify__progress-bar {
+	height: 3px;
+	background: linear-gradient(90deg, rgba(0, 191, 255, 0.8), rgba(0, 191, 255, 1));
+	border-radius: 0 0 12px 12px;
+	opacity: 0.8;
+}
+
+.Toastify__progress-bar--error {
+	background: linear-gradient(90deg, rgba(255, 100, 100, 0.8), rgba(255, 100, 100, 1));
+}
+
+.Toastify__progress-bar--warning {
+	background: linear-gradient(90deg, rgba(255, 200, 0, 0.8), rgba(255, 200, 0, 1));
+}
+
+/* Close Button */
+.Toastify__close-button {
+	color: rgba(255, 255, 255, 0.6);
+	opacity: 0.8;
+	transition: all 0.2s ease;
+}
+
+.Toastify__close-button:hover {
+	color: rgba(255, 255, 255, 1);
+	opacity: 1;
+	transform: scale(1.1);
+}
+
+/* Icon */
+.Toastify__toast-icon {
+	margin-right: 12px;
+	font-size: 20px;
+}
+
+/* Animation overrides for smoother entrance */
+@keyframes Toastify__slideInRight {
+	from {
+		transform: translate3d(110%, 0, 0);
+		opacity: 0;
+	}
+	to {
+		transform: translate3d(0, 0, 0);
+		opacity: 1;
+	}
+}
+
+@keyframes Toastify__slideOutRight {
+	from {
+		transform: translate3d(0, 0, 0);
+		opacity: 1;
+	}
+	to {
+		transform: translate3d(110%, 0, 0);
+		opacity: 0;
+	}
+}
+
+/* Mobile responsiveness */
+@media (max-width: 480px) {
+	.Toastify__toast {
+		margin: 8px;
+		border-radius: 10px;
+		padding: 14px 18px;
+		font-size: 14px;
+		min-height: 56px;
+	}
+
+	.Toastify__toast-icon {
+		font-size: 18px;
+		margin-right: 10px;
+	}
+}
+

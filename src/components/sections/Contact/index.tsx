@@ -1,13 +1,15 @@
+import emailjs from "@emailjs/browser"
 import { motion, useInView } from "framer-motion"
 import { useRef, useState } from "react"
+import { toast } from "react-toastify"
 import "./contactStyles.css"
 
 /**********************************************************************************************************
  *   COMPONENT START
  **********************************************************************************************************/
 export const Contact = () => {
+	/***** STATE *****/
 	const ref = useRef(null)
-	const isInView = useInView(ref, { once: false, margin: "0px 0px -100px 0px", amount: 0.2 })
 	const [formData, setFormData] = useState({
 		name: "",
 		email: "",
@@ -15,6 +17,15 @@ export const Contact = () => {
 		message: ""
 	})
 
+	/***** HOOKS *****/
+	const isInView = useInView(ref, { once: false, margin: "0px 0px -100px 0px", amount: 0.2 })
+	const [isSubmitting, setIsSubmitting] = useState(false)
+
+	const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID || ""
+	const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || ""
+	const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || ""
+
+	/***** FUNCTIONS *****/
 	const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
 		const { name, value } = e.target
 		setFormData(prev => ({
@@ -23,28 +34,47 @@ export const Contact = () => {
 		}))
 	}
 
-	const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+	const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault()
 		
-		// Construct mailto link with form data
-		const recipient = ""
-		const subject = encodeURIComponent(formData.subject)
-		const body = encodeURIComponent(
-			`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
-		)
-		
-		const mailtoLink = `mailto:${recipient}?subject=${subject}&body=${body}`
-		
-		// Open email client
-		window.location.href = mailtoLink
-		
-		// Clear form after opening email client
-		setFormData({
-			name: "",
-			email: "",
-			subject: "",
-			message: ""
-		})
+		if (!EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID || !EMAILJS_PUBLIC_KEY) {
+			toast.error("Email service is not configured. Please contact the administrator.")
+			return
+		}
+
+		setIsSubmitting(true)
+
+		try {
+			emailjs.init(EMAILJS_PUBLIC_KEY)
+			const result = await emailjs.send(
+				EMAILJS_SERVICE_ID,
+				EMAILJS_TEMPLATE_ID,
+				{
+					name: formData.name,
+					email: formData.email,
+					subject: formData.subject,
+					message: formData.message,
+				}
+			)
+
+			if (result.text === "OK") {
+				toast.success("Thank you! Your message has been sent successfully.")
+				
+				setFormData({
+					name: "",
+					email: "",
+					subject: "",
+					message: ""
+				})
+			}
+
+		} catch (error) {
+			console.error("EmailJS error:", error)
+			toast.error("Sorry, there was an error sending your message. Please try again later.")
+
+		} finally {
+			setIsSubmitting(false)
+		}
 	}
 
 	/***** RENDER *****/
@@ -150,8 +180,9 @@ export const Contact = () => {
 				<button
 					type="submit"
 					className="contact__submit"
+					disabled={isSubmitting}
 				>
-					Send Message
+					{isSubmitting ? "Sending..." : "Send Message"}
 				</button>
 			</motion.form>
 		</section>
